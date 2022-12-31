@@ -1,1 +1,29 @@
 <my-app>loading</my-app>
+
+<form>
+  <input autocomplete="one-time-code" required />
+  <input type="submit" />
+</form>
+
+<script>
+  function greetings(name) {
+    alert(`wellcome ${name}`);
+  }
+  function doSomething() {
+    console.log('DOM loaded');
+  }
+  function test() {
+    if (!window.OTPCredential) {
+      console.log('Feature Not Available');
+    } else {
+      console.log('Feature Available');
+    }
+
+    if ('OTPCredential' in window) {
+      window.addEventListener('DOMContentLoaded', doSomething);
+    } else {
+      // `DOMContentLoaded` has already fired
+      doSomething();
+    }
+  }
+</script>
